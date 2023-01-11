@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% block content %}
+    <article class="blog-post h-entry">
+      <div id="cover-wrapper">
+        <a href="">
+          <img
+            alt="cover image for article"
+            class="thumbnail"
+            src="{{blog.main_image.url}}"
+          />
+        </a>
+      </div>
+      <div id="title-wrapper">
+        <a class="u-url" href="/golang-file-write/">
+          <h1
+            class="flair"
+            id="title"
+            style="text-align: right; z-index: 2; padding-right: 0.2rem"
+          >
+            {{blog.title}}
+          </h1>
+        </a>
+        <p>
+          {{blog.bio}}
+        </p>
+        {% for tag in blog.tag.all %}
+        <a href=""> #{{tag.name}} </a>
+        {% endfor %}
+        <div class="author">
+          <p>
+            <time
+              class="dt-published post-date"
+              datetime="2022-12-18"
+              style="text-align: right; z-index: 2"
+            >
+              {{blog.created}}
+            </time>
+          </p>
+          <p>
+            <span class="p-given-name"> Manish </span>
+            <span class="p-family-name"> Chand </span>
+          </p>
+        </div>
+        <div class="h-card p-author" rel="author">
+          <p class="p-note">
+            manishicad Blog
+            <a target="_blank" href="https://instagram.com/manishcad"> @manishcad </a>
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div id="post-body">
+        <h2 id="introduction">Introduction</h2>
+        <p>
+          {{blog.introduction | safe }}
+        </p>
+        {{blog.body |safe }}
+        <div class="highlight">
+          
+        </div>
+        <div class="highlight">
+          
+        </div>
+        
+        <h3 id="write-slice-of-strings-to-file">
+          Conclusion
+        </h3>
+        <p>
+          {{blog.conclusion | safe }}
+        </p>
+   
+        
+        <div class="prevnext">
+          <style type="text/css">
+            :root {
+              --prevnext-color-text: #eefbfe;
+              --prevnext-color-angle: #ff6600;
+              --prevnext-subtitle-brightness: 3;
+            }
+            [data-theme="light"] {
+              --prevnext-color-text: #1f2022;
+              --prevnext-color-angle: #ffeb00;
+              --prevnext-subtitle-brightness: 3;
+            }
+            [data-theme="dark"] {
+              --prevnext-color-text: #eefbfe;
+              --prevnext-color-angle: #ff6600;
+              --prevnext-subtitle-brightness: 3;
+            }
+            .prevnext {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: flex-start;
+            }
+            .prevnext a {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              text-decoration: none;
+            }
+            a.next {
+              justify-content: flex-end;
+            }
+            .prevnext a:hover {
+              background: #00000006;
+            }
+            .prevnext-subtitle {
+              color: var(--prevnext-color-text);
+              filter: brightness(var(--prevnext-subtitle-brightness));
+              font-size: 0.8rem;
+            }
+            .prevnext-title {
+              color: var(--prevnext-color-text);
+              font-size: 1rem;
+            }
+            .prevnext-text {
+              max-width: 30vw;
+            }
+          </style>
+          <a class="prev" href="/crossposter-shellscript">
+            <svg
+              fill="none"
+              height="50px"
+              viewbox="0 0 24 24"
+              width="50px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.5 8.25L9.75 12L13.5 15.75"
+                stroke="var(--prevnext-color-angle)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              ></path>
+            </svg>
+            <div class="prevnext-text">
+              <p class="prevnext-subtitle">prev</p>
+              <p class="prevnext-title">
+                Crossposting with a single script: Crossposter.sh
+              </p>
+            </div>
+          </a>
+          <a class="next" href="/golang-functions">
+            <div class="prevnext-text">
+              <p class="prevnext-subtitle">next</p>
+              <p class="prevnext-title">Golang: Functions</p>
+            </div>
+            <svg
+              fill="none"
+              height="50px"
+              viewbox="0 0 24 24"
+              width="50px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.5 15.75L14.25 12L10.5 8.25"
+                stroke="var(--prevnext-color-angle)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <hr />
+      <div id="show"></div>
+    </article>
+    <div id="comments">
+      <script
+        async=""
+        crossorigin="anonymous"
+        data-category="Q&amp;A"
+        data-category-id="DIC_kwDOHZ6V_s4CRfn4"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-lang="en"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-repo="Mr-Destructive/meetgor.com"
+        data-repo-id="R_kgDOHZ6V_g"
+        data-strict="0"
+        data-theme="dark_high_contrast"
+        src="https://giscus.app/client.js"
+      ></script>
+    </div>
+    <hr />
+    {% endblock %}

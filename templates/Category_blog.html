@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{% include 'second_navbar.html' %}
+    <article class="list-blog">
+      <input
+        type="search"
+        class="fuzzy-search"
+        placeholder="fuzzy search!"
+        onkeyup="fuzzy_search()"
+        align="center"
+        autocomplete="off"
+      />
+    </article>
+
+    <h2 class="tagname">#{{name}}</h2>
+    <p align="center">{{count}} posts published on {{name}}</p>
+    <ul>
+      
+{% for blog in blogs %}
+      <li class="post">
+        <img
+          src="{{blog.main_image.url}}"
+          class="cover-image"
+        />
+        <a href="{% url 'show_blog' blog.uid  %}">
+          <h2 id="title">{{blog.title}}</h2>
+        </a>
+      </li>
+{% endfor %}
+      
+    </ul>
+
+   {% endblock %}

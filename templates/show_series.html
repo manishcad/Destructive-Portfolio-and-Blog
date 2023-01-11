@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% include 'second_navbar.html' %}
+    
+
+    <h2>Django-Deployment</h2>
+    <p>
+      Django Deployment is a series for understanding various platforms for
+      Django project deployment with database attachment. Platforms to be
+      covered: Heroku, Railway, Qovery, Python Anywhere, etc.
+    </p>
+    <ol class="list-post">
+      {% for blog in blogs %}
+      <li class="post">
+        <img
+          src="{{blog.main_image.url}}"
+          class="cover-image"
+        />
+        <a href="{% url 'show_blog' blog.uid  %}">
+          <h2 id="title">{{blog.title}}</h2>
+        </a>
+      </li>
+      {% endfor %}
+  
+
+    </ol>
+
+   {% endblock %}

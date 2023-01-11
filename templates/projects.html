@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+      <h3 align="center">Here are some of my Projects:</h3>
+      <ul class="prjlist">
+
+        {% for category in all_category %}
+          <li>{{category.name}}
+              <ul class="webapps">
+                {% for project in category.project.all %}
+                  {% if project.live_link %}
+                    <li><a target="_blank" href="{{project.live_link}}">{{project.name}}</a></li>
+                    {% else %}
+                    <li><a href="{{project.github_link}}" target="_blank">{{project.name}}</a></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+        </li>
+
+        {% endfor %}
+          
+       
+        
+        
+        </ul>
+      </ul>
+      <hr>
+{% endblock %}

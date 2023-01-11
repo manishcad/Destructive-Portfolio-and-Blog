@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+{% include 'second_navbar.html' %}
+    
+
+    <center><h2>Tags</h2></center>
+    <ul class="taglist">
+     
+{% for tag in all_tags %}
+      <li class="post">
+        <a href="{% url 'Category_blogs' tag.name  %}">
+          <h2 id="title">#{{tag.name}}</h2>
+        </a>
+      </li>
+{% endfor %}
+    </ul>
+
+   {% endblock %}

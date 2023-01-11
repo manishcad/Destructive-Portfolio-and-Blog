@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <article class="blog-post h-entry">
+      <div class="headline">
+        <p>
+          <a href="/tag/vim">Python</a>, <a href="/tag/django">Django</a>,
+          <a href="/tag/bash">Html</a>,<a href="/tag/bash">Css</a>
+        </p>
+      </div>
+      <ul>
+        <li>
+          <span>Me</span>
+          <ul class="info">
+            <li>Hey &#128075;, I am Manish also known as manishcad</li>
+            <li>I am an I.T. and Computer Science student</li>
+            <li>
+              I post here about the things I learn mostly related to
+              <a href="/tag/django">Django</a>, <a href="/tag/vim">Python</a>, and
+              <a href="/tag/go">Css</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>Portfolio</span>
+          <ul class="info">
+            <li>
+              Check out the <a href="{% url 'projects' %}">Projects</a> created by me.
+            </li>
+            <li>Check out all of my <a href="{% url 'blog' %}">Articles</a>.</li>
+            <li>
+              Check out my 
+              <a href="/tags">Tags</a>, <a href="/series">Series</a> Posts.
+            </li>
+            
+            <li>
+              Currently learning about <a href="/tag/go">Django Restframework</a> and
+              <a href="/tag/django">Django</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>About</span>
+          <ul class="info">
+            <li>
+              <a href="">Location:</a
+              >(Odisha,India)
+            </li>
+            <li><a href="">Education:</a>(Completing my graduation in Bachelor in Computer Application)</li>
+            <li><a href="">Work:</a>(I Love to work on Backend Projects using Django)</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+    <hr />
+    
+{% endblock %}

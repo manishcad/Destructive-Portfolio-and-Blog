@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'second_navbar.html' %}
+    
+
+    <h2>Series</h2>
+    <ul>
+      {% for series in all_series %}
+      <li class="post">
+        <a href="{% url 'show_series' series.name %}">
+          <h2 id="title">{{series.name}}</h2>
+        </a>
+      </li>
+      {% endfor %}
+      
+    </ul>
+
+    {% endblock %}

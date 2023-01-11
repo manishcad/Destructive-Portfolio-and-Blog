@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% include 'second_navbar.html' %}
+
+    <div class="box" style="margin-top: 20px;">
+    <ul class="post-list">
+
+      {% for blog in blogs %}
+      <li class="post">
+        <img
+          loading="lazy"
+          src="{{blog.main_image.url}}"
+          class="cover-image"
+        />
+        <a href="{% url 'show_blog' blog.uid %}">
+          <h2 id="title">{{blog.title}}</h2>
+          <span>{{blog.created}}</span>
+        </a>
+      </li>
+    </div>
+      {% endfor %}
+      
+    </ul>
+  {% endblock %}

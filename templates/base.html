@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Manish Chand</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hey Myself Manish welcome to my blog and Portfolio"
+    />
+    <meta property="og:url" content="https://www.meetgor.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Manish Chand" />
+    <meta
+      property="og:description"
+      content="Hey am manish chand known as manishcad"
+    />
+    <meta
+      property="og:image"
+      content=""
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="https://www.meetgor.com" />
+    <meta name="twitter:url" content="https://www.meetgor.com" />
+    <meta name="twitter:title" content="Meet Gor" />
+    <meta
+      name="twitter:description"
+      content="Hey welcome to my blog and portfolio"
+    />
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/techstructive-blog/image/upload/v1653734034/blog-media/meetgor/meetgor_favicon_180.png"
+    />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/techstructive-blog/image/upload/v1653734034/blog-media/meetgor/meetgor_favicon_180.png"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EET2ZX4QY1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-EET2ZX4QY1");
+    </script>
+  </head>
+  <body style="background:#090912">
+    <nav>
+      <a href="/"><h1 class="text-primary">Manish Chand</h1></a>
+      <ul class="navbar">
+        <li><a class="navlink" href="{% url 'Home' %}">Home</a></li>
+        <li><a class="navlink" href="{% url 'blog' %}">Blog</a></li>
+        <li><a class="navlink" href="{% url 'projects' %}">Projects</a></li>
+      </ul>
+    </nav>
+    <hr />
+    {% block content %}
+
+
+
+    {% endblock %}
+
+
+    <footer style="margin-top: 20px;">
+        Manishcad Blog © 2022
+        <ul class="social">
+          <li>
+            <a href="https://www.facebook.com/manish.chand.9480" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+              Facebook
+              
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/manish-chand-3b7b4a158/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              LinkedIn
+              
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/manishcad" target="_blank">
+            <i class="fa-brands fa-github"></i>
+              GitHub
+              
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/manishcad/" target="_blank">
+                <i class="fa-brands fa-square-instagram"></i>
+                Instagram
+              
+            </a>
+          </li>
+          
+          <li>
+            
+            <a class="u-email" href="mailto:manishtochand@gmail.com" target="_blank">Email</a>
+            
+          </li>
+        </ul>
+      </footer>
+   
+</body>
+</html>
