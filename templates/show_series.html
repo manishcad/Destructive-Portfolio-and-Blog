@@ -4,11 +4,9 @@
 {% include 'second_navbar.html' %}
     
 
-    <h2>Django-Deployment</h2>
+    <h2>{{series.name}}</h2>
     <p>
-      Django Deployment is a series for understanding various platforms for
-      Django project deployment with database attachment. Platforms to be
-      covered: Heroku, Railway, Qovery, Python Anywhere, etc.
+      {{series.bio}}
     </p>
     <ol class="list-post">
       {% for blog in blogs %}
