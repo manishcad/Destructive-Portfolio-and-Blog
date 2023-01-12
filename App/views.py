@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Blog, Project_category, Project, Tag, Series
+from django.contrib import messages
 # Create your views here.
 
 
@@ -47,10 +48,12 @@ def series(request):
 
 def show_series(request, pk):
     try:
+        print(pk)
         series = Series.objects.get(name=pk)
         blogs = Blog.objects.filter(series=series)
-        context = {"blogs": blogs}
+        context = {"blogs": blogs, "series": series}
         return render(request, 'show_series.html', context)
     except Exception as e:
+        messages.warning(request, "Series Not Found")
         print(e)
-        return redirect("Home")
+        return redirect("series")

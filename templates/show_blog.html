@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+  @media only screen and (max-width: 400px) {
+  p {
+    font-size: 20px;
+  }
+  
+  h3{
+    font-size: 35px;
+  }
+  #introduction{
+    background-color: transparent;
+  }
+  #post-body > p {
+  font-size: 20px;
+}
+ 
+
+}
+
+</style>
     <article class="blog-post h-entry">
-      <div id="cover-wrapper">
+      <div id="cover-wrapper" style="text-align: center;">
         <a href="">
           <img
             alt="cover image for article"
@@ -11,7 +31,7 @@
         </a>
       </div>
       <div id="title-wrapper">
-        <a class="u-url" href="/golang-file-write/">
+        <a class="u-url" href="">
           <h1
             class="flair"
             id="title"
@@ -53,11 +73,11 @@
       </div>
       <hr />
       <div id="post-body">
-        <h2 id="introduction">Introduction</h2>
+        <h3 id="introduction">Introduction</h3>
         <p>
           {{blog.introduction | safe }}
         </p>
-        {{blog.body |safe }}
+        <p id="text">{{blog.body |safe }}</p>
         <div class="highlight">
           
         </div>
@@ -121,50 +141,8 @@
               max-width: 30vw;
             }
           </style>
-          <a class="prev" href="/crossposter-shellscript">
-            <svg
-              fill="none"
-              height="50px"
-              viewbox="0 0 24 24"
-              width="50px"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.5 8.25L9.75 12L13.5 15.75"
-                stroke="var(--prevnext-color-angle)"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-            </svg>
-            <div class="prevnext-text">
-              <p class="prevnext-subtitle">prev</p>
-              <p class="prevnext-title">
-                Crossposting with a single script: Crossposter.sh
-              </p>
-            </div>
-          </a>
-          <a class="next" href="/golang-functions">
-            <div class="prevnext-text">
-              <p class="prevnext-subtitle">next</p>
-              <p class="prevnext-title">Golang: Functions</p>
-            </div>
-            <svg
-              fill="none"
-              height="50px"
-              viewbox="0 0 24 24"
-              width="50px"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.5 15.75L14.25 12L10.5 8.25"
-                stroke="var(--prevnext-color-angle)"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-            </svg>
-          </a>
+          
+          
         </div>
       </div>
       <hr />

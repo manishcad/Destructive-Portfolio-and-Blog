@@ -16,6 +16,7 @@ class Base_model(models.Model):
 
 class Series(Base_model):
     name = models.CharField(max_length=100)
+    bio = models.TextField(default="")
 
     def __str__(self):
         return str(self.name)
