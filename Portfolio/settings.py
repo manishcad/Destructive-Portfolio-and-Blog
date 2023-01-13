@@ -84,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'QJ3zCVppqfhWlaS349qd',
-        'HOST': 'containers-us-west-169.railway.app',
+        'PASSWORD': os.environ.get("Database_Password"),
+        'HOST': os.environ.get("Database_Host"),
         'PORT': '5610',
     }
 }
@@ -154,7 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Cloudnary Settings
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dgbe30e7f',
-    'API_KEY': '761954252784968',
-    'API_SECRET': 'Tk86498ouwBdMrzVE5L9b6jrwD0'
+    'API_KEY': os.environ.get("Cloudinary_Api_Key"),
+    'API_SECRET': os.environ.get("Cloudinary_Api_Secret")
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
